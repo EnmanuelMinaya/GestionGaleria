@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f7f4af4d5fd4b98988486667f6e497c" Name="Diagram1">
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_DocumentoIdentidad" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_Dueno" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_Genero" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_Persona" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_Pintor" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_Pintura" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GaleriaModel.Tbl_PinturaGenero" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Perso__Id_Do__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Dueno__Id_Pe__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Du__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Ge__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Pinto__Id_Pe__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Pi__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Pi__34C8D9D1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GaleriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_DocumentoIdentidad">
+    <Key>
+      <PropertyRef Name="Id_DocumentoIdentidad" />
+    </Key>
+    <Property Name="Id_DocumentoIdentidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Dueno">
+    <Key>
+      <PropertyRef Name="Id_Dueno" />
+    </Key>
+    <Property Name="Id_Dueno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Genero">
+    <Key>
+      <PropertyRef Name="Id_Genero" />
+    </Key>
+    <Property Name="Id_Genero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreGenero" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Persona">
+    <Key>
+      <PropertyRef Name="Id_Persona" />
+    </Key>
+    <Property Name="Id_Persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_DocumentoIdentidad" Type="int" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="Nacionalidad" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Pintor">
+    <Key>
+      <PropertyRef Name="Id_Pintor" />
+    </Key>
+    <Property Name="Id_Pintor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Pintura">
+    <Key>
+      <PropertyRef Name="Id_Pintura" />
+    </Key>
+    <Property Name="Id_Pintura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Pintor" Type="int" />
+    <Property Name="Id_Dueno" Type="int" Nullable="false" />
+    <Property Name="NombrePintura" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Tamano" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="FechaCreacion" Type="date" />
+    <Property Name="FechaIngreso" Type="datetime" />
+    <Property Name="FechaSalida" Type="datetime" />
+    <Property Name="Valor" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Estado" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_PinturaGenero">
+    <Key>
+      <PropertyRef Name="Id_PinturaGenero" />
+    </Key>
+    <Property Name="Id_PinturaGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Pintura" Type="int" Nullable="false" />
+    <Property Name="Id_Genero" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Tbl_Dueno__Id_Pe__2C3393D0">
+    <End Role="Tbl_Persona" Type="Self.Tbl_Persona" Multiplicity="1" />
+    <End Role="Tbl_Dueno" Type="Self.Tbl_Dueno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Persona">
+        <PropertyRef Name="Id_Persona" />
+      </Principal>
+      <Dependent Role="Tbl_Dueno">
+        <PropertyRef Name="Id_Persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Perso__Id_Do__267ABA7A">
+    <End Role="Tbl_DocumentoIdentidad" Type="Self.Tbl_DocumentoIdentidad" Multiplicity="1" />
+    <End Role="Tbl_Persona" Type="Self.Tbl_Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_DocumentoIdentidad">
+        <PropertyRef Name="Id_DocumentoIdentidad" />
+      </Principal>
+      <Dependent Role="Tbl_Persona">
+        <PropertyRef Name="Id_DocumentoIdentidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Pinto__Id_Pe__29572725">
+    <End Role="Tbl_Persona" Type="Self.Tbl_Persona" Multiplicity="1" />
+    <End Role="Tbl_Pintor" Type="Self.Tbl_Pintor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Persona">
+        <PropertyRef Name="Id_Persona" />
+      </Principal>
+      <Dependent Role="Tbl_Pintor">
+        <PropertyRef Name="Id_Persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Pintu__Id_Du__300424B4">
+    <End Role="Tbl_Dueno" Type="Self.Tbl_Dueno" Multiplicity="1" />
+    <End Role="Tbl_Pintura" Type="Self.Tbl_Pintura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Dueno">
+        <PropertyRef Name="Id_Dueno" />
+      </Principal>
+      <Dependent Role="Tbl_Pintura">
+        <PropertyRef Name="Id_Dueno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Pintu__Id_Ge__35BCFE0A">
+    <End Role="Tbl_Genero" Type="Self.Tbl_Genero" Multiplicity="1" />
+    <End Role="Tbl_PinturaGenero" Type="Self.Tbl_PinturaGenero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Genero">
+        <PropertyRef Name="Id_Genero" />
+      </Principal>
+      <Dependent Role="Tbl_PinturaGenero">
+        <PropertyRef Name="Id_Genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Pintu__Id_Pi__2F10007B">
+    <End Role="Tbl_Pintor" Type="Self.Tbl_Pintor" Multiplicity="0..1" />
+    <End Role="Tbl_Pintura" Type="Self.Tbl_Pintura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Pintor">
+        <PropertyRef Name="Id_Pintor" />
+      </Principal>
+      <Dependent Role="Tbl_Pintura">
+        <PropertyRef Name="Id_Pintor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Pintu__Id_Pi__34C8D9D1">
+    <End Role="Tbl_Pintura" Type="Self.Tbl_Pintura" Multiplicity="1" />
+    <End Role="Tbl_PinturaGenero" Type="Self.Tbl_PinturaGenero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Pintura">
+        <PropertyRef Name="Id_Pintura" />
+      </Principal>
+      <Dependent Role="Tbl_PinturaGenero">
+        <PropertyRef Name="Id_Pintura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DeleteDueno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Dueno" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteGenero" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Genero" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Persona" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePintor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Pintor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePintura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Pintura" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertDueno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Persona" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertGenero" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NombreGenero" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="Correo" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
+    <Parameter Name="Nacionalidad" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertPintor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Persona" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertPintura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Pintura" Type="int" Mode="In" />
+    <Parameter Name="Id_Pintor" Type="int" Mode="In" />
+    <Parameter Name="Id_dueno" Type="int" Mode="In" />
+    <Parameter Name="NombrePintura" Type="varchar" Mode="In" />
+    <Parameter Name="Tamano" Type="varchar" Mode="In" />
+    <Parameter Name="FechaCreacion" Type="date" Mode="In" />
+    <Parameter Name="FechaIngreso" Type="datetime" Mode="In" />
+    <Parameter Name="FechaSalida" Type="datetime" Mode="In" />
+    <Parameter Name="Valor" Type="decimal" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="GaleriaModelStoreContainer">
+    <EntitySet Name="Tbl_DocumentoIdentidad" EntityType="Self.Tbl_DocumentoIdentidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Dueno" EntityType="Self.Tbl_Dueno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Genero" EntityType="Self.Tbl_Genero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Persona" EntityType="Self.Tbl_Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Pintor" EntityType="Self.Tbl_Pintor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Pintura" EntityType="Self.Tbl_Pintura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_PinturaGenero" EntityType="Self.Tbl_PinturaGenero" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Tbl_Dueno__Id_Pe__2C3393D0" Association="Self.FK__Tbl_Dueno__Id_Pe__2C3393D0">
+      <End Role="Tbl_Persona" EntitySet="Tbl_Persona" />
+      <End Role="Tbl_Dueno" EntitySet="Tbl_Dueno" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Perso__Id_Do__267ABA7A" Association="Self.FK__Tbl_Perso__Id_Do__267ABA7A">
+      <End Role="Tbl_DocumentoIdentidad" EntitySet="Tbl_DocumentoIdentidad" />
+      <End Role="Tbl_Persona" EntitySet="Tbl_Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Pinto__Id_Pe__29572725" Association="Self.FK__Tbl_Pinto__Id_Pe__29572725">
+      <End Role="Tbl_Persona" EntitySet="Tbl_Persona" />
+      <End Role="Tbl_Pintor" EntitySet="Tbl_Pintor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Pintu__Id_Du__300424B4" Association="Self.FK__Tbl_Pintu__Id_Du__300424B4">
+      <End Role="Tbl_Dueno" EntitySet="Tbl_Dueno" />
+      <End Role="Tbl_Pintura" EntitySet="Tbl_Pintura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Pintu__Id_Ge__35BCFE0A" Association="Self.FK__Tbl_Pintu__Id_Ge__35BCFE0A">
+      <End Role="Tbl_Genero" EntitySet="Tbl_Genero" />
+      <End Role="Tbl_PinturaGenero" EntitySet="Tbl_PinturaGenero" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Pintu__Id_Pi__2F10007B" Association="Self.FK__Tbl_Pintu__Id_Pi__2F10007B">
+      <End Role="Tbl_Pintor" EntitySet="Tbl_Pintor" />
+      <End Role="Tbl_Pintura" EntitySet="Tbl_Pintura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Pintu__Id_Pi__34C8D9D1" Association="Self.FK__Tbl_Pintu__Id_Pi__34C8D9D1">
+      <End Role="Tbl_Pintura" EntitySet="Tbl_Pintura" />
+      <End Role="Tbl_PinturaGenero" EntitySet="Tbl_PinturaGenero" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

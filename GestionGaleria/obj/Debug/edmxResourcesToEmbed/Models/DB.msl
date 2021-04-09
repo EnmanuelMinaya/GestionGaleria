@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GaleriaModelStoreContainer" CdmEntityContainer="GaleriaEntities">
+    <EntitySetMapping Name="Tbl_DocumentoIdentidad">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_DocumentoIdentidad">
+        <MappingFragment StoreEntitySet="Tbl_DocumentoIdentidad">
+          <ScalarProperty Name="Id_DocumentoIdentidad" ColumnName="Id_DocumentoIdentidad" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Dueno">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_Dueno">
+        <MappingFragment StoreEntitySet="Tbl_Dueno">
+          <ScalarProperty Name="Id_Dueno" ColumnName="Id_Dueno" />
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Genero">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_Genero">
+        <MappingFragment StoreEntitySet="Tbl_Genero">
+          <ScalarProperty Name="Id_Genero" ColumnName="Id_Genero" />
+          <ScalarProperty Name="NombreGenero" ColumnName="NombreGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Persona">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_Persona">
+        <MappingFragment StoreEntitySet="Tbl_Persona">
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+          <ScalarProperty Name="Id_DocumentoIdentidad" ColumnName="Id_DocumentoIdentidad" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Pintor">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_Pintor">
+        <MappingFragment StoreEntitySet="Tbl_Pintor">
+          <ScalarProperty Name="Id_Pintor" ColumnName="Id_Pintor" />
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Pintura">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_Pintura">
+        <MappingFragment StoreEntitySet="Tbl_Pintura">
+          <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
+          <ScalarProperty Name="Id_Pintor" ColumnName="Id_Pintor" />
+          <ScalarProperty Name="Id_Dueno" ColumnName="Id_Dueno" />
+          <ScalarProperty Name="NombrePintura" ColumnName="NombrePintura" />
+          <ScalarProperty Name="Tamano" ColumnName="Tamano" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_PinturaGenero">
+      <EntityTypeMapping TypeName="GaleriaModel.Tbl_PinturaGenero">
+        <MappingFragment StoreEntitySet="Tbl_PinturaGenero">
+          <ScalarProperty Name="Id_PinturaGenero" ColumnName="Id_PinturaGenero" />
+          <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
+          <ScalarProperty Name="Id_Genero" ColumnName="Id_Genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteDueno" FunctionName="GaleriaModel.Store.DeleteDueno" />
+    <FunctionImportMapping FunctionImportName="DeleteGenero" FunctionName="GaleriaModel.Store.DeleteGenero" />
+    <FunctionImportMapping FunctionImportName="DeletePersona" FunctionName="GaleriaModel.Store.DeletePersona" />
+    <FunctionImportMapping FunctionImportName="DeletePintor" FunctionName="GaleriaModel.Store.DeletePintor" />
+    <FunctionImportMapping FunctionImportName="DeletePintura" FunctionName="GaleriaModel.Store.DeletePintura" />
+    <FunctionImportMapping FunctionImportName="InsertDueno" FunctionName="GaleriaModel.Store.InsertDueno" />
+    <FunctionImportMapping FunctionImportName="InsertGenero" FunctionName="GaleriaModel.Store.InsertGenero" />
+    <FunctionImportMapping FunctionImportName="InsertPersona" FunctionName="GaleriaModel.Store.InsertPersona" />
+    <FunctionImportMapping FunctionImportName="InsertPintor" FunctionName="GaleriaModel.Store.InsertPintor" />
+    <FunctionImportMapping FunctionImportName="InsertPintura" FunctionName="GaleriaModel.Store.InsertPintura" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,15 @@
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\GestionGaleria.exe.config
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\GestionGaleria.exe
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\GestionGaleria.pdb
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\EntityFramework.dll
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\EntityFramework.xml
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.csprojAssemblyReference.cache
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Form1.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Properties.Resources.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.csproj.GenerateResource.cache
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.csproj.CopyComplete
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.exe
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.pdb
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.Nuevo.resources
