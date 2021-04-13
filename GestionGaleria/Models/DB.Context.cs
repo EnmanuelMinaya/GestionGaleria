@@ -188,5 +188,18 @@ namespace GestionGaleria.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPintura", id_PinturaParameter, id_PintorParameter, id_duenoParameter, nombrePinturaParameter, tamanoParameter, fechaCreacionParameter, fechaIngresoParameter, fechaSalidaParameter, valorParameter, estadoParameter);
         }
+    
+        public virtual int InsertDocId(string tipoDocumento, string numeroDocumento)
+        {
+            var tipoDocumentoParameter = tipoDocumento != null ?
+                new ObjectParameter("TipoDocumento", tipoDocumento) :
+                new ObjectParameter("TipoDocumento", typeof(string));
+    
+            var numeroDocumentoParameter = numeroDocumento != null ?
+                new ObjectParameter("NumeroDocumento", numeroDocumento) :
+                new ObjectParameter("NumeroDocumento", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertDocId", tipoDocumentoParameter, numeroDocumentoParameter);
+        }
     }
 }

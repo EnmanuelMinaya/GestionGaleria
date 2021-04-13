@@ -55,10 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Presentation\ExplorarPintores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Presentation\ExplorarPintores.Designer.cs">
+      <DependentUpon>ExplorarPintores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DB.Context.cs">
@@ -97,6 +103,24 @@
     <Compile Include="Models\Tbl_PinturaGenero.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\FormExplorarPinturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormExplorarPinturas.Designer.cs">
+      <DependentUpon>FormExplorarPinturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +129,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Presentation\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>

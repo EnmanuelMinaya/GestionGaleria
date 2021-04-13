@@ -83,5 +83,6 @@
     <FunctionImportMapping FunctionImportName="InsertPersona" FunctionName="GaleriaModel.Store.InsertPersona" />
     <FunctionImportMapping FunctionImportName="InsertPintor" FunctionName="GaleriaModel.Store.InsertPintor" />
     <FunctionImportMapping FunctionImportName="InsertPintura" FunctionName="GaleriaModel.Store.InsertPintura" />
+    <FunctionImportMapping FunctionImportName="InsertDocId" FunctionName="GaleriaModel.Store.InsertDocId" />
   </EntityContainerMapping>
 </Mapping>

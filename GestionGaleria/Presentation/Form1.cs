@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,13 +30,25 @@ namespace GestionGaleria
         {
             using (GaleriaEntities db = new GaleriaEntities())
             {
-                var lst = from d in db.Tbl_Persona
-                          select d;
-                dataGridView1.DataSource = lst.ToList();
+  
+                var ListaPersonas = db.Tbl_Persona
+                    .SqlQuery("Select * FROM Tbl_Persona")
+                    .ToList<Tbl_Persona>();
+
+               // dataGridView1.DataSource = ListaPersonas;
+                
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Presentation.Login login = new Presentation.Login();
+            login.ShowDialog();
+
+            Refrescar();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Presentation.Nuevo nuevo = new Presentation.Nuevo();
             nuevo.ShowDialog();

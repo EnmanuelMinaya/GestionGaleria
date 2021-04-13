@@ -245,5 +245,9 @@
       <Parameter Name="Valor" Mode="In" Type="Decimal" />
       <Parameter Name="Estado" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="InsertDocId">
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GaleriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GaleriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tbl_DocumentoIdentidad">
           <Key>
             <PropertyRef Name="Id_DocumentoIdentidad" />
@@ -169,6 +169,10 @@
         <Function Name="DeletePintura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id_Pintura" Type="int" Mode="In" />
         </Function>
+        <Function Name="InsertDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoDocumento" Type="varchar" Mode="In" />
+          <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="InsertDueno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id_Persona" Type="int" Mode="In" />
         </Function>
@@ -237,8 +241,7 @@
             <End Role="Tbl_PinturaGenero" EntitySet="Tbl_PinturaGenero" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GaleriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -442,25 +445,25 @@
             <End Role="Tbl_PinturaGenero" EntitySet="Tbl_PinturaGenero" />
           </AssociationSet>
           <FunctionImport Name="DeleteDueno">
-            <Parameter Name="Id_Dueno" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Dueno" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteGenero">
-            <Parameter Name="Id_Genero" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Genero" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeletePersona">
-            <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeletePintor">
-            <Parameter Name="Id_Pintor" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Pintor" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeletePintura">
-            <Parameter Name="Id_Pintura" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Pintura" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertDueno">
-            <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertGenero">
-            <Parameter Name="NombreGenero" Mode="In" Type="String" />
+          <Parameter Name="NombreGenero" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="InsertPersona">
             <Parameter Name="TipoDocumento" Mode="In" Type="String" />
@@ -473,7 +476,7 @@
             <Parameter Name="Nacionalidad" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="InsertPintor">
-            <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
+          <Parameter Name="Id_Persona" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertPintura">
             <Parameter Name="Id_Pintura" Mode="In" Type="Int32" />
@@ -486,6 +489,10 @@
             <Parameter Name="FechaSalida" Mode="In" Type="DateTime" />
             <Parameter Name="Valor" Mode="In" Type="Decimal" />
             <Parameter Name="Estado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertDocId">
+            <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+            <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
       </Schema>
@@ -576,6 +583,7 @@
           <FunctionImportMapping FunctionImportName="InsertPersona" FunctionName="GaleriaModel.Store.InsertPersona" />
           <FunctionImportMapping FunctionImportName="InsertPintor" FunctionName="GaleriaModel.Store.InsertPintor" />
           <FunctionImportMapping FunctionImportName="InsertPintura" FunctionName="GaleriaModel.Store.InsertPintura" />
+          <FunctionImportMapping FunctionImportName="InsertDocId" FunctionName="GaleriaModel.Store.InsertDocId" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

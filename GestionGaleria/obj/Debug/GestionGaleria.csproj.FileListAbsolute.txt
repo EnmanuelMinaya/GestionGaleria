@@ -13,3 +13,5 @@ C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaler
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.exe
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.pdb
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.Nuevo.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.FormInicio.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.Login.resources

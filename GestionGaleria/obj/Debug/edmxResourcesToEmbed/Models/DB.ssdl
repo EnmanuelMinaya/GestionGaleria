@@ -164,6 +164,10 @@
   <Function Name="DeletePintura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Id_Pintura" Type="int" Mode="In" />
   </Function>
+  <Function Name="InsertDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="NumeroDocumento" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="InsertDueno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Id_Persona" Type="int" Mode="In" />
   </Function>
