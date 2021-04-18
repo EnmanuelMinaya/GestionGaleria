@@ -50,10 +50,17 @@ namespace GestionGaleria
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Presentation.Nuevo nuevo = new Presentation.Nuevo();
+            Presentation.FormGestionarPersonas nuevo = new Presentation.FormGestionarPersonas();
             nuevo.ShowDialog();
 
             Refrescar();
+        }
+
+        private void btnGestionarPinturas_Click(object sender, EventArgs e)
+        {
+            Presentation.
+
+           // Refrescar();
         }
     }
 }

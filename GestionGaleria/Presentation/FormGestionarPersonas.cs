@@ -15,11 +15,13 @@ using GestionGaleria.Models;
 
 namespace GestionGaleria.Presentation
 {
-    public partial class Nuevo : Form
+    public partial class FormGestionarPersonas : Form
     {
         Tbl_Persona model = new Tbl_Persona();
         Tbl_DocumentoIdentidad model2 = new Tbl_DocumentoIdentidad();
-        public Nuevo()
+        Tbl_Dueno modelD = new Tbl_Dueno();
+        Tbl_Pintor modelP = new Tbl_Pintor();
+        public FormGestionarPersonas()
         {
             InitializeComponent();
         }
@@ -64,6 +66,34 @@ namespace GestionGaleria.Presentation
                     db.Entry(model).State = EntityState.Modified;
                 }
                 
+
+                if(BtnAmbos.Checked == true)
+                {
+                    modelD.Id_Persona = modelP.Id_Persona = model.Id_Persona;
+
+                    if (model.Id_Persona == 0)
+                    {
+                        db.Tbl_Dueno.Add(modelD);
+                        db.Tbl_Pintor.Add(modelP);
+                    }
+                    else
+                    {
+                        db.Entry(model).State = EntityState.Modified;
+                    }
+
+
+                } else if (BtnPintor.Checked == true)
+                {
+                    modelP.Id_Persona = model.Id_Persona;
+                    db.Tbl_Pintor.Add(modelP);
+                } else if (BtnDueno.Checked == true)
+                {
+                    modelD.Id_Persona = model.Id_Persona;
+                    db.Tbl_Dueno.Add(modelD);
+                }
+
+
+
 
                 db.SaveChanges();
                 Clear();

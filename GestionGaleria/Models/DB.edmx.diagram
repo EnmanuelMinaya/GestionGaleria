@@ -19,6 +19,7 @@
         <AssociationConnector Association="GaleriaModel.FK__Tbl_Pinto__Id_Pe__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Pi__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="GaleriaModel.FK__Tbl_Pintu__Id_Pi__34C8D9D1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GaleriaModel.ViewPintura" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

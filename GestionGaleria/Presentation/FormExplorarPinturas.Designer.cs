@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgPinturas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPinturas)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgPinturas
+            // 
+            this.dgPinturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPinturas.Location = new System.Drawing.Point(267, 29);
+            this.dgPinturas.Name = "dgPinturas";
+            this.dgPinturas.RowHeadersWidth = 47;
+            this.dgPinturas.Size = new System.Drawing.Size(465, 329);
+            this.dgPinturas.TabIndex = 0;
+            // 
+            // FormExplorarPinturas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgPinturas);
+            this.Name = "FormExplorarPinturas";
             this.Text = "FormExplorarPinturas";
+            this.Load += new System.EventHandler(this.FormExplorarPinturas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPinturas)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgPinturas;
     }
 }

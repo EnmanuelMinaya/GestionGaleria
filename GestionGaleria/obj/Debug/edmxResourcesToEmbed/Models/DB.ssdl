@@ -65,6 +65,18 @@
     <Property Name="Id_Pintura" Type="int" Nullable="false" />
     <Property Name="Id_Genero" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewPintura">
+    <Key>
+      <PropertyRef Name="Id_Pintura" />
+      <PropertyRef Name="Pintura" />
+    </Key>
+    <Property Name="Id_Pintura" Type="int" Nullable="false" />
+    <Property Name="Pintura" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Pintor" Type="varchar" MaxLength="40" />
+    <Property Name="Dueño" Type="varchar" MaxLength="40" />
+  </EntityType>
   <Association Name="FK__Tbl_Dueno__Id_Pe__2C3393D0">
     <End Role="Tbl_Persona" Type="Self.Tbl_Persona" Multiplicity="1" />
     <End Role="Tbl_Dueno" Type="Self.Tbl_Dueno" Multiplicity="*" />
@@ -207,6 +219,14 @@
     <EntitySet Name="Tbl_Pintor" EntityType="Self.Tbl_Pintor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_Pintura" EntityType="Self.Tbl_Pintura" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_PinturaGenero" EntityType="Self.Tbl_PinturaGenero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewPintura" EntityType="Self.ViewPintura" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewPintura].[Id_Pintura] AS [Id_Pintura], 
+    [ViewPintura].[Pintura] AS [Pintura], 
+    [ViewPintura].[Pintor] AS [Pintor], 
+    [ViewPintura].[Dueño] AS [Dueño]
+    FROM [dbo].[ViewPintura] AS [ViewPintura]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__Tbl_Dueno__Id_Pe__2C3393D0" Association="Self.FK__Tbl_Dueno__Id_Pe__2C3393D0">
       <End Role="Tbl_Persona" EntitySet="Tbl_Persona" />
       <End Role="Tbl_Dueno" EntitySet="Tbl_Dueno" />

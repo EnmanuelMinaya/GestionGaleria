@@ -15,3 +15,6 @@ C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaler
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.Nuevo.resources
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.FormInicio.resources
 C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.Login.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.ExplorarPintores.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Presentation.FormExplorarPinturas.resources
+C:\Users\enman\source\repos\GestionGaleria\GestionGaleria\obj\Debug\GestionGaleria.Models.FormGestionPinturas.resources

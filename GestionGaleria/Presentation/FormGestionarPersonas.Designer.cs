@@ -1,6 +1,6 @@
 ﻿namespace GestionGaleria.Presentation
 {
-    partial class Nuevo
+    partial class FormGestionarPersonas
     {
         /// <summary>
         /// Required designer variable.
@@ -46,8 +46,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.Id_Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_DocumentoIdentidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +54,18 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.BtnPintor = new System.Windows.Forms.RadioButton();
+            this.BtnDueno = new System.Windows.Forms.RadioButton();
+            this.BtnAmbos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 58);
+            this.label1.Location = new System.Drawing.Point(53, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 0;
@@ -71,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 92);
+            this.label2.Location = new System.Drawing.Point(37, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 13);
             this.label2.TabIndex = 1;
@@ -80,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 120);
+            this.label3.Location = new System.Drawing.Point(108, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -89,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 160);
+            this.label4.Location = new System.Drawing.Point(114, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 5;
@@ -98,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(103, 194);
+            this.label5.Location = new System.Drawing.Point(103, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 4;
@@ -107,7 +110,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(100, 225);
+            this.label6.Location = new System.Drawing.Point(100, 205);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 3;
@@ -116,7 +119,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 258);
+            this.label7.Location = new System.Drawing.Point(46, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 13);
             this.label7.TabIndex = 6;
@@ -125,7 +128,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(83, 289);
+            this.label8.Location = new System.Drawing.Point(83, 269);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 7;
@@ -133,7 +136,7 @@
             // 
             // textBoxTipoDoc
             // 
-            this.textBoxTipoDoc.Location = new System.Drawing.Point(171, 55);
+            this.textBoxTipoDoc.Location = new System.Drawing.Point(171, 35);
             this.textBoxTipoDoc.MaxLength = 40;
             this.textBoxTipoDoc.Name = "textBoxTipoDoc";
             this.textBoxTipoDoc.Size = new System.Drawing.Size(140, 20);
@@ -141,7 +144,7 @@
             // 
             // textBoxNumDoc
             // 
-            this.textBoxNumDoc.Location = new System.Drawing.Point(171, 89);
+            this.textBoxNumDoc.Location = new System.Drawing.Point(171, 69);
             this.textBoxNumDoc.MaxLength = 40;
             this.textBoxNumDoc.Name = "textBoxNumDoc";
             this.textBoxNumDoc.Size = new System.Drawing.Size(140, 20);
@@ -149,7 +152,7 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(171, 120);
+            this.textBoxNombre.Location = new System.Drawing.Point(171, 100);
             this.textBoxNombre.MaxLength = 40;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(140, 20);
@@ -157,7 +160,7 @@
             // 
             // textBoxDireccion
             // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(171, 222);
+            this.textBoxDireccion.Location = new System.Drawing.Point(171, 202);
             this.textBoxDireccion.MaxLength = 100;
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(140, 20);
@@ -165,7 +168,7 @@
             // 
             // textBoxTel
             // 
-            this.textBoxTel.Location = new System.Drawing.Point(171, 191);
+            this.textBoxTel.Location = new System.Drawing.Point(171, 171);
             this.textBoxTel.MaxLength = 20;
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(140, 20);
@@ -173,7 +176,7 @@
             // 
             // textBoxCorreo
             // 
-            this.textBoxCorreo.Location = new System.Drawing.Point(171, 157);
+            this.textBoxCorreo.Location = new System.Drawing.Point(171, 137);
             this.textBoxCorreo.MaxLength = 40;
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.Size = new System.Drawing.Size(140, 20);
@@ -181,7 +184,7 @@
             // 
             // textBoxNacionalidad
             // 
-            this.textBoxNacionalidad.Location = new System.Drawing.Point(171, 286);
+            this.textBoxNacionalidad.Location = new System.Drawing.Point(171, 266);
             this.textBoxNacionalidad.MaxLength = 40;
             this.textBoxNacionalidad.Name = "textBoxNacionalidad";
             this.textBoxNacionalidad.Size = new System.Drawing.Size(140, 20);
@@ -189,14 +192,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 252);
+            this.dateTimePicker1.Location = new System.Drawing.Point(171, 232);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
             this.dateTimePicker1.TabIndex = 16;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(49, 346);
+            this.btnSave.Location = new System.Drawing.Point(44, 395);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 17;
@@ -219,30 +222,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(404, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 47;
-            this.dataGridView1.Size = new System.Drawing.Size(737, 317);
+            this.dataGridView1.Size = new System.Drawing.Size(737, 383);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(158, 346);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 20;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(268, 346);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Id_Persona
             // 
@@ -310,11 +292,68 @@
             this.Nacionalidad.Name = "Nacionalidad";
             this.Nacionalidad.Width = 115;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDelete.Location = new System.Drawing.Point(153, 395);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(263, 395);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // BtnPintor
+            // 
+            this.BtnPintor.AutoSize = true;
+            this.BtnPintor.Location = new System.Drawing.Point(171, 304);
+            this.BtnPintor.Name = "BtnPintor";
+            this.BtnPintor.Size = new System.Drawing.Size(52, 17);
+            this.BtnPintor.TabIndex = 22;
+            this.BtnPintor.TabStop = true;
+            this.BtnPintor.Text = "Pintor";
+            this.BtnPintor.UseVisualStyleBackColor = true;
+            // 
+            // BtnDueno
+            // 
+            this.BtnDueno.AutoSize = true;
+            this.BtnDueno.Location = new System.Drawing.Point(171, 328);
+            this.BtnDueno.Name = "BtnDueno";
+            this.BtnDueno.Size = new System.Drawing.Size(57, 17);
+            this.BtnDueno.TabIndex = 23;
+            this.BtnDueno.TabStop = true;
+            this.BtnDueno.Text = "Dueño";
+            this.BtnDueno.UseVisualStyleBackColor = true;
+            // 
+            // BtnAmbos
+            // 
+            this.BtnAmbos.AutoSize = true;
+            this.BtnAmbos.Location = new System.Drawing.Point(171, 352);
+            this.BtnAmbos.Name = "BtnAmbos";
+            this.BtnAmbos.Size = new System.Drawing.Size(57, 17);
+            this.BtnAmbos.TabIndex = 24;
+            this.BtnAmbos.TabStop = true;
+            this.BtnAmbos.Text = "Ambos";
+            this.BtnAmbos.UseVisualStyleBackColor = true;
+            // 
             // Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 421);
+            this.ClientSize = new System.Drawing.Size(1278, 466);
+            this.Controls.Add(this.BtnAmbos);
+            this.Controls.Add(this.BtnDueno);
+            this.Controls.Add(this.BtnPintor);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridView1);
@@ -379,5 +418,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
+        private System.Windows.Forms.RadioButton BtnPintor;
+        private System.Windows.Forms.RadioButton BtnDueno;
+        private System.Windows.Forms.RadioButton BtnAmbos;
     }
 }

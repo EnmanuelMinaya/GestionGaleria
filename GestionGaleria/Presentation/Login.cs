@@ -23,7 +23,7 @@ namespace GestionGaleria.Presentation
             {
                 Form1 inicio = new Form1();
                 inicio.ShowDialog();
-
+               
             }
         }
     }

@@ -52,6 +52,7 @@
             this.btnGestionarPinturas.TabIndex = 2;
             this.btnGestionarPinturas.Text = "Gestionar Pinturas";
             this.btnGestionarPinturas.UseVisualStyleBackColor = true;
+            this.btnGestionarPinturas.Click += new System.EventHandler(this.btnGestionarPinturas_Click);
             // 
             // Form1
             // 

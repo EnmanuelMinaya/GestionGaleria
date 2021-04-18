@@ -249,5 +249,16 @@
       <Parameter Name="TipoDocumento" Mode="In" Type="String" />
       <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="ViewPinturas" EntityType="GaleriaModel.ViewPintura" />
   </EntityContainer>
+  <EntityType Name="ViewPintura">
+    <Key>
+      <PropertyRef Name="Id_Pintura" />
+      <PropertyRef Name="Pintura" />
+    </Key>
+    <Property Name="Id_Pintura" Type="Int32" Nullable="false" />
+    <Property Name="Pintura" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Pintor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Dueño" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

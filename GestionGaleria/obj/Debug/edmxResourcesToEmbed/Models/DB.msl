@@ -84,5 +84,15 @@
     <FunctionImportMapping FunctionImportName="InsertPintor" FunctionName="GaleriaModel.Store.InsertPintor" />
     <FunctionImportMapping FunctionImportName="InsertPintura" FunctionName="GaleriaModel.Store.InsertPintura" />
     <FunctionImportMapping FunctionImportName="InsertDocId" FunctionName="GaleriaModel.Store.InsertDocId" />
+    <EntitySetMapping Name="ViewPinturas">
+      <EntityTypeMapping TypeName="GaleriaModel.ViewPintura">
+        <MappingFragment StoreEntitySet="ViewPintura">
+          <ScalarProperty Name="Dueño" ColumnName="Dueño" />
+          <ScalarProperty Name="Pintor" ColumnName="Pintor" />
+          <ScalarProperty Name="Pintura" ColumnName="Pintura" />
+          <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
