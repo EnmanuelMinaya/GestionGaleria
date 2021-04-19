@@ -29,7 +29,7 @@ namespace GestionGaleria.Models
         public Nullable<System.DateTime> FechaIngreso { get; set; }
         public Nullable<System.DateTime> FechaSalida { get; set; }
         public Nullable<decimal> Valor { get; set; }
-        public string Estado { get; set; }
+        public string Ubicacion { get; set; }
     
         public virtual Tbl_Dueno Tbl_Dueno { get; set; }
         public virtual Tbl_Pintor Tbl_Pintor { get; set; }

@@ -64,10 +64,10 @@
     <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
     <Property Name="FechaSalida" Type="DateTime" Precision="3" />
     <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="Estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Tbl_Dueno" Relationship="Self.FK__Tbl_Pintu__Id_Du__300424B4" FromRole="Tbl_Pintura" ToRole="Tbl_Dueno" />
     <NavigationProperty Name="Tbl_Pintor" Relationship="Self.FK__Tbl_Pintu__Id_Pi__2F10007B" FromRole="Tbl_Pintura" ToRole="Tbl_Pintor" />
     <NavigationProperty Name="Tbl_PinturaGenero" Relationship="Self.FK__Tbl_Pintu__Id_Pi__34C8D9D1" FromRole="Tbl_Pintura" ToRole="Tbl_PinturaGenero" />
+    <Property Name="Ubicacion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Tbl_PinturaGenero">
     <Key>
@@ -250,6 +250,8 @@
       <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="ViewPinturas" EntityType="GaleriaModel.ViewPintura" />
+    <EntitySet Name="ViewPintors" EntityType="GaleriaModel.ViewPintor" />
+    <EntitySet Name="ViewDuenoes" EntityType="GaleriaModel.ViewDueno" />
   </EntityContainer>
   <EntityType Name="ViewPintura">
     <Key>
@@ -260,5 +262,29 @@
     <Property Name="Pintura" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="Pintor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="Dueño" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ViewPintor">
+    <Key>
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Telefono" />
+      <PropertyRef Name="FechaNacimiento" />
+      <PropertyRef Name="Nacionalidad" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ViewDueno">
+    <Key>
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Telefono" />
+      <PropertyRef Name="FechaNacimiento" />
+      <PropertyRef Name="Nacionalidad" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

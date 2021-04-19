@@ -60,7 +60,7 @@
           <Property Name="FechaIngreso" Type="datetime" />
           <Property Name="FechaSalida" Type="datetime" />
           <Property Name="Valor" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="Estado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="Tbl_PinturaGenero">
           <Key>
@@ -69,6 +69,34 @@
           <Property Name="Id_PinturaGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Pintura" Type="int" Nullable="false" />
           <Property Name="Id_Genero" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Galeria.dbo.ViewDueno' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewDueno">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="Nacionalidad" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Galeria.dbo.ViewPintor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewPintor">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="Nacionalidad" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -224,6 +252,22 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
           <EntitySet Name="Tbl_Pintor" EntityType="Self.Tbl_Pintor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Pintura" EntityType="Self.Tbl_Pintura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_PinturaGenero" EntityType="Self.Tbl_PinturaGenero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewDueno" EntityType="Self.ViewDueno" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewDueno].[Nombre] AS [Nombre], 
+    [ViewDueno].[Telefono] AS [Telefono], 
+    [ViewDueno].[FechaNacimiento] AS [FechaNacimiento], 
+    [ViewDueno].[Nacionalidad] AS [Nacionalidad]
+    FROM [dbo].[ViewDueno] AS [ViewDueno]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewPintor" EntityType="Self.ViewPintor" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewPintor].[Nombre] AS [Nombre], 
+    [ViewPintor].[Telefono] AS [Telefono], 
+    [ViewPintor].[FechaNacimiento] AS [FechaNacimiento], 
+    [ViewPintor].[Nacionalidad] AS [Nacionalidad]
+    FROM [dbo].[ViewPintor] AS [ViewPintor]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewPintura" EntityType="Self.ViewPintura" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewPintura].[Id_Pintura] AS [Id_Pintura], 
@@ -329,10 +373,10 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
           <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
           <Property Name="FechaSalida" Type="DateTime" Precision="3" />
           <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="Estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Tbl_Dueno" Relationship="Self.FK__Tbl_Pintu__Id_Du__300424B4" FromRole="Tbl_Pintura" ToRole="Tbl_Dueno" />
           <NavigationProperty Name="Tbl_Pintor" Relationship="Self.FK__Tbl_Pintu__Id_Pi__2F10007B" FromRole="Tbl_Pintura" ToRole="Tbl_Pintor" />
           <NavigationProperty Name="Tbl_PinturaGenero" Relationship="Self.FK__Tbl_Pintu__Id_Pi__34C8D9D1" FromRole="Tbl_Pintura" ToRole="Tbl_PinturaGenero" />
+          <Property Name="Ubicacion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_PinturaGenero">
           <Key>
@@ -515,6 +559,8 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
             <Parameter Name="NumeroDocumento" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="ViewPinturas" EntityType="GaleriaModel.ViewPintura" />
+          <EntitySet Name="ViewPintors" EntityType="GaleriaModel.ViewPintor" />
+          <EntitySet Name="ViewDuenoes" EntityType="GaleriaModel.ViewDueno" />
         </EntityContainer>
         <EntityType Name="ViewPintura">
           <Key>
@@ -525,6 +571,30 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
           <Property Name="Pintura" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Pintor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Dueño" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewPintor">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="Nacionalidad" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewDueno">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Telefono" />
+            <PropertyRef Name="FechaNacimiento" />
+            <PropertyRef Name="Nacionalidad" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -582,6 +652,7 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
           <EntitySetMapping Name="Tbl_Pintura">
             <EntityTypeMapping TypeName="GaleriaModel.Tbl_Pintura">
               <MappingFragment StoreEntitySet="Tbl_Pintura">
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
                 <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
                 <ScalarProperty Name="Id_Pintor" ColumnName="Id_Pintor" />
                 <ScalarProperty Name="Id_Dueno" ColumnName="Id_Dueno" />
@@ -591,7 +662,6 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
                 <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
                 <ScalarProperty Name="Valor" ColumnName="Valor" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -622,6 +692,26 @@ warning 6002: The table/view 'Galeria.dbo.ViewPintura' does not have a primary k
                 <ScalarProperty Name="Pintor" ColumnName="Pintor" />
                 <ScalarProperty Name="Pintura" ColumnName="Pintura" />
                 <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewPintors">
+            <EntityTypeMapping TypeName="GaleriaModel.ViewPintor">
+              <MappingFragment StoreEntitySet="ViewPintor">
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewDuenoes">
+            <EntityTypeMapping TypeName="GaleriaModel.ViewDueno">
+              <MappingFragment StoreEntitySet="ViewDueno">
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

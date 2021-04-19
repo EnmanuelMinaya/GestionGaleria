@@ -32,6 +32,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnExplorarPinturas = new System.Windows.Forms.Button();
             this.btnExplorarPintor = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -40,7 +41,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(306, 334);
+            this.button1.Location = new System.Drawing.Point(309, 513);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 24);
             this.button1.TabIndex = 0;
@@ -54,7 +55,7 @@
             this.btnExplorarPinturas.ForeColor = System.Drawing.Color.Black;
             this.btnExplorarPinturas.Location = new System.Drawing.Point(67, 63);
             this.btnExplorarPinturas.Name = "btnExplorarPinturas";
-            this.btnExplorarPinturas.Size = new System.Drawing.Size(354, 101);
+            this.btnExplorarPinturas.Size = new System.Drawing.Size(354, 85);
             this.btnExplorarPinturas.TabIndex = 1;
             this.btnExplorarPinturas.Text = "Explorar Pinturas";
             this.btnExplorarPinturas.UseVisualStyleBackColor = true;
@@ -72,12 +73,25 @@
             this.btnExplorarPintor.UseVisualStyleBackColor = true;
             this.btnExplorarPintor.Click += new System.EventHandler(this.btnExplorarPintor_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 13.74545F);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(67, 317);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(354, 86);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Dueños de pinturas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(493, 370);
+            this.ClientSize = new System.Drawing.Size(493, 549);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnExplorarPintor);
             this.Controls.Add(this.btnExplorarPinturas);
             this.Controls.Add(this.button1);
@@ -94,5 +108,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnExplorarPinturas;
         private System.Windows.Forms.Button btnExplorarPintor;
+        private System.Windows.Forms.Button button2;
     }
 }

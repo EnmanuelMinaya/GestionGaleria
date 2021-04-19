@@ -35,6 +35,8 @@ namespace GestionGaleria.Models
         public virtual DbSet<Tbl_Pintura> Tbl_Pintura { get; set; }
         public virtual DbSet<Tbl_PinturaGenero> Tbl_PinturaGenero { get; set; }
         public virtual DbSet<ViewPintura> ViewPinturas { get; set; }
+        public virtual DbSet<ViewPintor> ViewPintors { get; set; }
+        public virtual DbSet<ViewDueno> ViewDuenoes { get; set; }
     
         public virtual int DeleteDueno(Nullable<int> id_Dueno)
         {

@@ -35,5 +35,11 @@ namespace GestionGaleria.Presentation
             Presentation.FormExplorarPinturas EPinturas = new Presentation.FormExplorarPinturas();
             EPinturas.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Presentation.FormExplorarDuenos EDuenos = new Presentation.FormExplorarDuenos();
+            EDuenos.ShowDialog();
+        }
     }
 }

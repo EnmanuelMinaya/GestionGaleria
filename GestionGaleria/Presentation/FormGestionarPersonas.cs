@@ -56,7 +56,6 @@ namespace GestionGaleria.Presentation
 
 
 
-                //db.Tbl_Persona.Add(model);
 
                  
                 if (model.Id_Persona == 0)

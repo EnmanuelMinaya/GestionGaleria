@@ -51,6 +51,7 @@
     <EntitySetMapping Name="Tbl_Pintura">
       <EntityTypeMapping TypeName="GaleriaModel.Tbl_Pintura">
         <MappingFragment StoreEntitySet="Tbl_Pintura">
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
           <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
           <ScalarProperty Name="Id_Pintor" ColumnName="Id_Pintor" />
           <ScalarProperty Name="Id_Dueno" ColumnName="Id_Dueno" />
@@ -60,7 +61,6 @@
           <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
           <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
           <ScalarProperty Name="Valor" ColumnName="Valor" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,6 +91,26 @@
           <ScalarProperty Name="Pintor" ColumnName="Pintor" />
           <ScalarProperty Name="Pintura" ColumnName="Pintura" />
           <ScalarProperty Name="Id_Pintura" ColumnName="Id_Pintura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewPintors">
+      <EntityTypeMapping TypeName="GaleriaModel.ViewPintor">
+        <MappingFragment StoreEntitySet="ViewPintor">
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewDuenoes">
+      <EntityTypeMapping TypeName="GaleriaModel.ViewDueno">
+        <MappingFragment StoreEntitySet="ViewDueno">
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

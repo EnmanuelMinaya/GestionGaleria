@@ -55,11 +55,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentation\FormGestPinturas.cs">
+    <Compile Include="GaleriaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSetPintor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSetPintor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSetPintur.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSetPintur.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDataSetPintura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDataSetPintura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaDSPintor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaDSPintor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FormGestPinturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormGestPinturas.Designer.cs">
+    <Compile Include="Models\FormGestPinturas.Designer.cs">
       <DependentUpon>FormGestPinturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewDueno.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewPintor.cs">
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewPintura.cs">
       <DependentUpon>DB.tt</DependentUpon>
@@ -69,6 +115,12 @@
     </Compile>
     <Compile Include="Presentation\ExplorarPintores.Designer.cs">
       <DependentUpon>ExplorarPintores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormExplorarDuenos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormExplorarDuenos.Designer.cs">
+      <DependentUpon>FormExplorarDuenos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormMenuAdmin.cs">
       <SubType>Form</SubType>
@@ -138,11 +190,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\FormGestPinturas.resx">
+    <EmbeddedResource Include="Models\FormGestPinturas.resx">
       <DependentUpon>FormGestPinturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ExplorarPintores.resx">
       <DependentUpon>ExplorarPintores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormExplorarDuenos.resx">
+      <DependentUpon>FormExplorarDuenos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormMenuAdmin.resx">
       <DependentUpon>FormMenuAdmin.cs</DependentUpon>
@@ -172,6 +227,94 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GaleriaDataSet.xsc">
+      <DependentUpon>GaleriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSet.xss">
+      <DependentUpon>GaleriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet1.xsc">
+      <DependentUpon>GaleriaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSet1.xss">
+      <DependentUpon>GaleriaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet2.xsc">
+      <DependentUpon>GaleriaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSet2.xss">
+      <DependentUpon>GaleriaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet3.xsc">
+      <DependentUpon>GaleriaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSet3.xss">
+      <DependentUpon>GaleriaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintor.xsc">
+      <DependentUpon>GaleriaDataSetPintor.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSetPintor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSetPintor.xss">
+      <DependentUpon>GaleriaDataSetPintor.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintur.xsc">
+      <DependentUpon>GaleriaDataSetPintur.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintur.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSetPintur.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSetPintur.xss">
+      <DependentUpon>GaleriaDataSetPintur.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintura.xsc">
+      <DependentUpon>GaleriaDataSetPintura.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDataSetPintura.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDataSetPintura.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDataSetPintura.xss">
+      <DependentUpon>GaleriaDataSetPintura.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDSPintor.xsc">
+      <DependentUpon>GaleriaDSPintor.xsd</DependentUpon>
+    </None>
+    <None Include="GaleriaDSPintor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GaleriaDSPintor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GaleriaDSPintor.xss">
+      <DependentUpon>GaleriaDSPintor.xsd</DependentUpon>
+    </None>
     <None Include="Models\DB.edmx.diagram">
       <DependentUpon>DB.edmx</DependentUpon>
     </None>

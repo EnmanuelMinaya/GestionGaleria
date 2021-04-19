@@ -58,9 +58,9 @@ namespace GestionGaleria
 
         private void btnGestionarPinturas_Click(object sender, EventArgs e)
         {
-            Presentation.
-
-           // Refrescar();
+            Models.FormGestionPinturas FormGPints = new FormGestionPinturas();
+            FormGPints.ShowDialog();
+            Refrescar();
         }
     }
 }
